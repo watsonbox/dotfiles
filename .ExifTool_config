@@ -1,0 +1,28 @@
+# See http://owl.phy.queensu.ca/~phil/exiftool/config.html and http://u88.n24.queensu.ca/exiftool/forum/index.php?topic=5417.0
+# Usage: exiftool "-iptc:keywords<mykeywords" FILE  (possibly add -overwrite_original option)
+
+%Image::ExifTool::UserDefined = (
+    'Image::ExifTool::Composite' => {
+        MyKeywords => {
+            Require => {
+                0 => 'XMP-mwg-rs:RegionName',
+            },
+            Desire => {
+                1 => 'IPTC:Keywords',
+            },
+            ValueConv => q{
+                my (@key, %key, $changed);
+                my @reg = ref $val[0] eq 'ARRAY' ? @{$val[0]} : ($val[0]);
+                @key = ref $val[1] eq 'ARRAY' ? @{$val[1]} : ($val[1]) if defined $val[1];
+                $key{$_} = 1 foreach @key;
+                foreach (@reg) {
+                    next if $key{$_};
+                    push @key, $_;
+                    $changed = 1;
+                }
+                return $changed ? \@key : undef;
+            },
+        },
+    },
+);
+1; # end
