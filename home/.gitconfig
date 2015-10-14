@@ -1,0 +1,9 @@
+[user]
+	name = Howard Wilson
+	email = howard@watsonbox.net
+[push]
+	default = simple
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	co = checkout
+	wip = !git add -A && git commit -m 'WIP'
