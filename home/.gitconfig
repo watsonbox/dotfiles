@@ -7,3 +7,4 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	co = checkout
 	wip = !git add -A && git commit -m 'WIP'
+	fbclean = "!f() { git branch --merged ${1-develop} | grep " feature/" | xargs git branch -d; }; f"
