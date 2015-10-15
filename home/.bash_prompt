@@ -36,9 +36,10 @@ set_prompts() {
             #    github.com/mathiasbynens/dotfiles/blob/a8bd0d4300/.bash_prompt#L30-L43
         fi
 
+        wip=$(git show --oneline --no-patch --exit-code --grep=WIP HEAD > /dev/null || echo ' [WIP]')
 
         [ -n "${s}" ] && s=" [${s}]";
-        echo -e " (${branchName}$dirty)";
+        echo -e " (${branchName}$dirty)$(tput setaf 1)$wip$(tput sgr0)";
 
         return
     }
