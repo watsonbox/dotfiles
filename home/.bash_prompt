@@ -46,7 +46,7 @@ set_prompts() {
     # Prompt string
     export PS1="\n\[$(tput bold)\]\[$(tput setaf 5)\]➜ \[$(tput setaf 6)\]\w\[$(tput setaf 3)\]\$(prompt_git) \[$(tput sgr0)\]"
 
-    Subshell prompt string
+    # Subshell prompt string
     export PS2="⚡ "
 }
 
