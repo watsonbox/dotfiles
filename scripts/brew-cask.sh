@@ -28,3 +28,4 @@ brew cask install daisydisk
 brew cask install transmission
 brew cask install vlc
 brew cask install jdownloader
+brew cask install slate

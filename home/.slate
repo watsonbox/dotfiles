@@ -1,0 +1,28 @@
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Monitor Aliases
+alias mon-laptop   1440x900
+alias mon-external 1920x1080
+
+# Position Aliases
+alias 1-full move screenOriginX;screenOriginY screenSizeX;screenSizeY ${mon-laptop}
+alias 2-full move screenOriginX;screenOriginY screenSizeX;screenSizeY ${mon-external}
+
+# 2 Monitor layout
+layout 2monitors 'Google Chrome':REPEAT ${2-full}
+layout 2monitors 'Terminal':REPEAT ${1-full}
+layout 2monitors 'Skype':REPEAT ${1-full}
+layout 2monitors 'Mail':REPEAT ${1-full}
+layout 2monitors 'Spotify':REPEAT ${1-full}
+
+# Layout Bindings
+bind return:ctrl layout 2monitors
+
+# Default Layouts
+default 2monitors resolutions:${mon-laptop};${mon-external}
+
+# Throw Bindings
+bind 1:ctrl throw ${mon-laptop} resize
+bind 2:ctrl throw ${mon-external} resize
