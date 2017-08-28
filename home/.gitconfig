@@ -7,4 +7,10 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	co = checkout
 	wip = !git add -A && git commit -m 'WIP'
-	fbclean = "!f() { git branch --merged ${1-develop} | grep " feature/" | xargs git branch -d; }; f"
+	fbclean = "!f() { git branch --merged ${1-master} | grep " feature/" | xargs git branch -d; }; f"
+	dig = "!f() { git log --pretty=format:'%Cred%h%Creset - %Cgreen(%ad)%Creset - %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=short -G"$1" -- $2; }; f"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
