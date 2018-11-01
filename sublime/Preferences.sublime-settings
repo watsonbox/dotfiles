@@ -2,7 +2,7 @@
 	"auto_complete": false,
 	"auto_complete_commit_on_tab": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/Oceanic Next.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Oceanic_Next (SL).tmTheme",
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"file_exclude_patterns":
 	[
@@ -31,7 +31,6 @@
 	],
 	"folder_exclude_patterns":
 	[
-		"data",
 		".git",
 		".svn",
 		".hg",
@@ -41,13 +40,15 @@
 		"bundle",
 		".rbx",
 		"script",
-		"tmp"
+		"tmp",
+		"node_modules"
 	],
-	"font_size": 14,
+	"font_size": 15,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"Markdown",
 		"Vintage"
 	],
 	"rulers":
@@ -55,8 +56,9 @@
 		100
 	],
 	"save_on_focus_lost": true,
+	"show_full_path": true,
 	"tab_size": 2,
+	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"show_full_path": true
+	"trim_trailing_white_space_on_save": true
 }
