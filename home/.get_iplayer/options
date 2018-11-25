@@ -1,0 +1,4 @@
+subdirformat <nameshort>-<seriesnum>
+fileprefix <nameshort><.senum><.episodeshort>
+output /Volumes/Media/Downloads
+subdir 1
